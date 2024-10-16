@@ -1,12 +1,22 @@
 {
-  "name": "core",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@touch2fa/core",
+  "version": "0.1.0",
+  "description": "Core functionalities for Touch2FA",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint 'src/**/*.{ts,tsx}'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "otplib": "^12.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.25.2",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0"
+  }
 }
