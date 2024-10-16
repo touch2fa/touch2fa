@@ -157,9 +157,9 @@ For any questions or suggestions, feel free to open an [issue](https://github.co
 
 **Connect with us:**
 
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/touch2fa?style=social)](https://github.com/touch2fa/touch2fa/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/yourusername/touch2fa?style=social)](https://github.com/touch2fa/touch2fa/network/members)
-[![Twitter Follow](https://img.shields.io/twitter/follow/yourtwitterhandle?style=social)](https://x.com/touch2fa)
+[![GitHub Stars](https://img.shields.io/github/stars/touch2fs/touch2fa?style=social)](https://github.com/touch2fa/touch2fa/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/touch2fa/touch2fa?style=social)](https://github.com/touch2fa/touch2fa/network/members)
+[![Twitter Follow](https://img.shields.io/twitter/follow/touch2fa?style=social)](https://x.com/touch2fa)
 
 ---
 
