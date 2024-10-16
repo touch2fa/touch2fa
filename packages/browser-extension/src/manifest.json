@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Touch2FA",
+    "version": "0.1.0",
+    "description": "Seamless Biometric Two-Factor Authentication",
+    "permissions": ["activeTab", "storage"],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": "assets/icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
