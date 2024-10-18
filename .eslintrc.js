@@ -1,4 +1,4 @@
-// .eslintrc.js
+// packages/browser-extension/.eslintrc.js
 
 const path = require("path"); // Ensure 'path' is imported
 
@@ -7,6 +7,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true, // Add Jest environment
   },
   extends: [
     "eslint:recommended",
@@ -84,4 +85,18 @@ module.exports = {
     },
   },
   ignorePatterns: ["dist/", "node_modules/"], // Ignore build and dependency directories
+  overrides: [
+    {
+      files: [".eslintrc.js"],
+      rules: {
+        "@typescript-eslint/no-require-imports": "off",
+      },
+    },
+    {
+      files: ["*.test.js", "*.test.ts", "*.test.tsx"],
+      env: {
+        jest: true, // Ensures that 'test' and 'expect' are recognized
+      },
+    },
+  ],
 };
