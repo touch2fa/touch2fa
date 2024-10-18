@@ -3,8 +3,8 @@
 
 ![Touch2FA Banner](https://user-images.githubusercontent.com/yourusername/yourrepo/banner.png)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](https://github.com/yourusername/touch2fa)
+[![License](https://img.shields.io/badge/license-Apache-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0-brightgreen.svg)](https://github.com/yourusername/touch2fa)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](#contributing)
 
 ---
@@ -143,7 +143,7 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct]
 
 ## 📄 **License**
 
-This project is licensed under the terms of the [MIT License](LICENSE).
+This project is licensed under the terms of the [Apache Version 2.0 License](LICENSE).
 
 ---
 
