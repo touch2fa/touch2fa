@@ -1,0 +1,63 @@
+# .github/workflows/build.yml
+
+name: CI Build
+
+# Trigger the workflow on pull request events targeting any branch
+on:
+  pull_request:
+    branches:
+      - '**'  # Matches all branches
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Define environment variables
+    env:
+      NODE_VERSION_FILE: 'package.json'
+
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Extract Node.js version from package.json's engines.node
+      - name: Get Node.js version from package.json
+        id: node-version
+        run: |
+          NODE_VERSION=$(node -p "require('./${NODE_VERSION_FILE}').engines.node")
+          echo "NODE_VERSION=${NODE_VERSION}" >> $GITHUB_OUTPUT
+
+      # 3. Setup Node.js using the extracted version
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ steps.node-version.outputs.NODE_VERSION }}
+          cache: 'npm'  # Enables caching for npm dependencies
+
+      # 4. Install dependencies using npm and bootstrap with Lerna
+      - name: Install Dependencies and Bootstrap with Lerna
+        run: npm run bootstrap
+
+      # 5. Build all packages using Lerna
+      - name: Build Packages
+        run: npm run build
+
+      # 6. (Optional) Upload Build Artifacts
+      # Uncomment the following step if you need to upload build artifacts for debugging or deployment
+      # - name: Upload Build Artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: build-artifacts
+      #     path: |
+      #       packages/*/dist
+      #       # Add other paths if your build outputs are located elsewhere
+
+      # 7. (Optional) Notify on Failure
+      # Uncomment and configure the following steps to receive notifications (e.g., Slack) on build failures
+      # - name: Notify Failure
+      #   if: failure()
+      #   uses: rtCamp/action-slack-notify@v2
+      #   env:
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #     SLACK_MESSAGE: "Build failed for PR #${{ github.event.pull_request.number }}."
