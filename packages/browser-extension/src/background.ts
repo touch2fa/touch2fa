@@ -10,7 +10,8 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "requestTOTP") {
     (async () => {
-      const authenticated = await authenticateUser() || fallbackAuthentication();
+      const authenticated =
+        (await authenticateUser()) || fallbackAuthentication();
       if (authenticated) {
         const code = generateTOTP(request.secret);
         sendResponse({ code });

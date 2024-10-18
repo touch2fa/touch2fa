@@ -1,2 +1,2 @@
-export * from './encryptData';
-export * from './decryptData';
+export * from "./encryptData";
+export * from "./decryptData";

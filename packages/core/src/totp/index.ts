@@ -1,1 +1,1 @@
-export * from './generateTOTP';
+export * from "./generateTOTP";

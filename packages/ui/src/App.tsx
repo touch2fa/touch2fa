@@ -1,6 +1,7 @@
-import React from 'react';
-import { SetupWizard } from './components/SetupWizard';
-import { AccountManager } from './components/AccountManager';
+import React from "react";
+
+import { AccountManager } from "./components/AccountManager";
+import { SetupWizard } from "./components/SetupWizard";
 
 const App: React.FC = () => {
   // Use state to determine whether to show the SetupWizard or AccountManager

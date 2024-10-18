@@ -1,2 +1,2 @@
-export * from './biometricAuth';
-export * from './fallbackAuth';
+export * from "./biometricAuth";
+export * from "./fallbackAuth";
