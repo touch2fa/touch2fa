@@ -3,7 +3,8 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development', 
+  mode: 'production', 
+  devtool: 'source-map', // Ensure no 'eval' is used
   entry: {
     background: './src/background.ts',
     contentScript: './src/contentScript.ts',
@@ -40,10 +41,10 @@ module.exports = {
       process: 'process/browser',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src/manifest.json', to: '.' }, { from: 'src/popup/popup.html', to: '.' },
-        { from: 'src/popup/popup.html', to: '.' },
+      patterns: [
+        { from: 'src/manifest.json', to: '.' },
+        { from: 'src/popup/popup.html', to: '.' }, // Removed duplicate entry
       ],
-      
     }),
   ],
 };
