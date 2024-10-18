@@ -4,6 +4,7 @@ chrome.runtime.sendMessage(
     if (response.code) {
       // Auto-fill the TOTP code
       const inputField = document.querySelector(
+        // eslint-disable-next-line quotes
         'input[type="text"][name="totp"]'
       );
       if (inputField) {
